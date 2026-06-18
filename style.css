@@ -1,0 +1,359 @@
+/* ==========================================================================
+   1. БАЗОВИЙ ХАКЕРСЬКИЙ СТИЛЬ СТОРІНКИ ТА КІНЕСКОПА
+   ========================================================================== */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #050a05;
+    color: #33ff33;
+    /* Справжній хакерський зелений */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.game-container {
+    background: #0a110a;
+    padding: 35px;
+    border-radius: 30px;
+    /* Круглий, як старі кінескопи */
+    border: 12px solid #1a261a;
+    /* Товстий пластиковий корпус монітора */
+
+    /* Світіння екрана + тінь корпусу */
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.9),
+        inset 0 0 30px rgba(51, 255, 51, 0.2);
+
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ефект горизонтальних ліній сканування (як на старому ТБ) */
+.game-container::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 10;
+    background-size: 100% 4px, 6px 100%;
+    pointer-events: none;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #1a3c1a;
+    margin: 20px 0;
+}
+
+/* ==========================================================================
+   2. СТИЛІ ДЛЯ ГОЛОВНОГО МЕНЮ (WELCOME.HTML) ТА ІНСТРУКЦІЇ
+   ========================================================================== */
+.terminal-logo {
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: center;
+    display: inline-block;
+    color: #33ff33;
+    text-shadow: 0 0 8px #33ff33;
+    margin-bottom: 15px;
+}
+
+.blink-title {
+    margin-top: 0;
+    font-size: 22px;
+    color: #33ff33;
+    text-shadow: 0 0 10px #33ff33;
+    animation: terminal-blink 1s infinite alternate;
+}
+
+@keyframes terminal-blink {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.7;
+    }
+}
+
+/* Блок інструкції (details) */
+.welcome-info-details {
+    text-align: left;
+    background: rgba(51, 255, 51, 0.05);
+    border: 1px dashed #33ff33;
+    margin: 25px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Кнопка-заголовок для розгортання інструкції */
+.details-toggle-btn {
+    padding: 12px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #33ff33;
+    text-shadow: 0 0 5px #33ff33;
+    background: rgba(51, 255, 51, 0.1);
+    outline: none;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+.details-toggle-btn::-webkit-details-marker {
+    display: none;
+}
+
+/* Наша кастомна стрілочка терміналу */
+.details-toggle-btn::before {
+    content: "► ";
+    margin-right: 10px;
+    display: inline-block;
+    transition: transform 0.2s ease;
+    color: #33ff33;
+    text-shadow: 0 0 5px #33ff33;
+}
+
+/* Поворот стрілочки при відкритті */
+.welcome-info-details[open] .details-toggle-btn::before {
+    transform: rotate(90deg);
+}
+
+/* Вміст відкритого блоку інструкції */
+.welcome-info-content {
+    padding: 15px;
+    border-top: 1px dashed rgba(51, 255, 51, 0.4);
+}
+
+.welcome-info-content p {
+    margin: 8px 0;
+}
+
+/* Велика кнопка запуску в меню */
+.start-system-btn {
+    font-size: 20px !important;
+    padding: 15px 30px !important;
+    animation: pulse-glow 2s infinite;
+    margin: 15px 0;
+}
+
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 4px 0 #081308, 0 0 10px rgba(51, 255, 51, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 4px 0 #081308, 0 0 25px rgba(51, 255, 51, 0.8);
+    }
+
+    100% {
+        box-shadow: 0 4px 0 #081308, 0 0 10px rgba(51, 255, 51, 0.4);
+    }
+}
+
+/* ==========================================================================
+   3. МЕХАНІЧНІ ОБ'ЄМНІ КНОПКИ ТА СЕЛЕКТОРИ
+   ========================================================================== */
+select {
+    background-color: #050a05;
+    color: #33ff33;
+    border: 2px solid #33ff33;
+    padding: 8px 12px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    outline: none;
+    text-shadow: 0 0 5px rgba(51, 255, 51, 0.5);
+    box-shadow: inset 0 0 5px rgba(51, 255, 51, 0.3);
+}
+
+button {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    background-color: #0d220d;
+    color: #33ff33;
+    border: 3px solid #1a3c1a;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+
+    /* Важка пластикова 3D-тінь кнопки */
+    box-shadow:
+        0 4px 0 #081308,
+        0 4px 10px rgba(0, 0, 0, 0.7),
+        inset 0 0 10px rgba(51, 255, 51, 0.2);
+
+    text-shadow: 0 0 6px #33ff33;
+    transition: all 0.1s ease;
+}
+
+button:hover:not(:disabled) {
+    background-color: #143514;
+    border-color: #33ff33;
+    box-shadow:
+        0 4px 0 #0d220d,
+        0 0 15px rgba(51, 255, 51, 0.4),
+        inset 0 0 10px rgba(51, 255, 51, 0.3);
+}
+
+button:active:not(:disabled) {
+    top: 4px;
+    /* Кнопка вдавлюється на глибину тіні */
+    box-shadow: 0 0 0 #000, inset 0 0 15px rgba(51, 255, 51, 0.5);
+}
+
+button:disabled {
+    background-color: #050a05;
+    color: #1a3c1a;
+    border-color: #081308;
+    box-shadow: none;
+    text-shadow: none;
+    cursor: not-allowed;
+}
+
+/* ==========================================================================
+   4. ІГРОВИЙ ІНТЕРФЕЙС (ПАНЕЛІ, СЛОВО, КЛАВІАТУРА)
+   ========================================================================== */
+h1 {
+    margin-top: 0;
+    color: #33ff33;
+    text-shadow: 0 0 10px #33ff33;
+}
+
+.settings-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.setting-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    color: #33ff33;
+    text-shadow: 0 0 5px rgba(51, 255, 51, 0.5);
+}
+
+.stats-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.stat-box {
+    font-size: 20px;
+    font-weight: bold;
+    color: #33ff33;
+    text-shadow: 0 0 8px #33ff33;
+}
+
+#score-view {
+    background: rgba(51, 255, 51, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px dashed #33ff33;
+}
+
+.word-display {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+/* Люмінесцентні рамки для букв слова */
+.letter-box {
+    width: 45px;
+    height: 45px;
+    border: 2px solid #33ff33;
+    border-radius: 4px;
+    font-size: 26px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #050a05;
+    color: #33ff33;
+    box-shadow: 0 0 10px rgba(51, 255, 51, 0.3), inset 0 0 8px rgba(51, 255, 51, 0.2);
+    text-shadow: 0 0 8px #33ff33;
+}
+
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+/* Кнопки літер віртуальної клавіатури */
+.key-btn {
+    padding: 10px 12px;
+    background-color: #0d220d;
+    color: #33ff33;
+    border: 2px solid #1a3c1a;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 3px 0 #050a05, 0 3px 5px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 4px rgba(51, 255, 51, 0.6);
+    transition: all 0.05s ease;
+}
+
+.key-btn:hover:not(:disabled) {
+    background-color: #143514;
+    border-color: #33ff33;
+    box-shadow: 0 3px 0 #0d220d, 0 0 8px rgba(51, 255, 51, 0.5);
+}
+
+.key-btn:active:not(:disabled) {
+    transform: translateY(3px);
+    box-shadow: 0 0 0 #000;
+}
+
+.key-btn:disabled {
+    background-color: #030603;
+    color: #1a3c1a;
+    border-color: #081308;
+    transform: translateY(3px);
+    /* Залишається механічно втиснутою */
+    box-shadow: none;
+    text-shadow: none;
+    cursor: not-allowed;
+}
+/* Стилі для сторінки завершення гри */
+.success-title {
+    color: #33ff33;
+    text-shadow: 0 0 15px #33ff33, 0 0 25px rgba(51, 255, 51, 0.5);
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.final-score-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #33ff33;
+    text-shadow: 0 0 8px #33ff33;
+    border-top: 1px dashed rgba(51, 255, 51, 0.3);
+    padding-top: 10px;
+    margin-top: 15px;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гра: Вгадай Слово</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1> Pancier: Вгадай Слово</h1>
+        
+        <div class="settings-panel">
+            <div class="setting-block">
+                <label>Мова / Язык / Language:</label>
+                <select id="language-select">
+                    <option value="ua">Українська</option>
+                    <option value="ru">Русский</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+
+            <div class="setting-block">
+                <label>Складність (Літер):</label>
+                <select id="difficulty-select">
+                    <option value="5">1 Рівень (5 літер)</option>
+                    <option value="7">2 Рівень (7 літер)</option>
+                    <option value="10">3 Рівень (10 літер)</option>
+                </select>
+            </div>
+            <button id="start-game-btn">Почати гру</button>
+        </div>
+
+        <hr>
+
+        <div class="stats-panel">
+            <div class="stat-box">Очки: <span id="score-view">0</span></div>
+            <button id="buy-letter-btn" disabled>Купити літеру (50 очок)</button>
+        </div>
+
+        <div id="question-container">
+            [ОЧІКУВАННЯ ЗАПУСКУ СИСТЕМИ...]
+        </div>
+
+        <div class="word-display" id="word-container"></div>
+
+        <div class="keyboard" id="keyboard-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

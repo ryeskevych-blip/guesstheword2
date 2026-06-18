@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вхід у Термінал</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="game-container">
+        <pre class="terminal-logo">
+ _  _  _   _    _   _ 
+| || || | | |  | \ | |
+| || || | | |  |  \| |
+|__/__/_| |_|  |_| \_|
+                      </pre>
+
+        <h1 class="blink-title">> СИСТЕМА «ВГАДАЙ СЛОВО» </h1>
+
+        <details class="welcome-info-details" open>
+            <summary class="details-toggle-btn">[ІНСТРУКЦІЯ ТА СТАТУС СИСТЕМИ]</summary>
+            <div class="welcome-info-content">
+                <p>[СТАТУС]: Очікування авторизації користувача...</p>
+                <p>[ПРАВИЛА]: Система загадує слово на основі мови та рівня складності. Кожна вгадана літера додає +25
+                    очок. Користувач має право купити закриту літеру за 50 очок.</p>
+                <p>[ПОПЕРЕДЖЕННЯ]: Доступ обмежено протоколом безпеки.</p>
+            </div>
+        </details>
+
+        <button class="start-system-btn" id="enter-btn" style="margin-top: 20px;">
+            [ ЗАПУСТИТИ СИСТЕМУ ]
+        </button>
+    </div>
+
+    <script>
+        document.getElementById('enter-btn').addEventListener('click', function () {
+            localStorage.removeItem('gameScore');
+            window.location.href = 'frame.html';
+        });
+    </script>
+</body>
+
+</html>
