@@ -4,42 +4,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вхід у Термінал</title>
+    <title>Pancier Термінал: Вгадай Слово</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="game-container">
-        <pre class="terminal-logo">
- _  _  _   _    _   _ 
-| || || | | |  | \ | |
-| || || | | |  |  \| |
-|__/__/_| |_|  |_| \_|
-                      </pre>
 
-        <h1 class="blink-title">> СИСТЕМА «ВГАДАЙ СЛОВО» </h1>
+        <div id="welcome-screen" class="screen">
+            <pre class="terminal-logo">
+ ______      __      __      __   _____
+ |  ____|    / /\    |   \  /   | |  ___|
+| | ___    / /\ \   | |\ \/ /| | | |___
+| ||__ |  / /__\ \  | | \ _/ | | | |___
+ |______/ /_/    \_\ |_|      |_| |_____|
+            </pre>
 
-        <details class="welcome-info-details" open>
-            <summary class="details-toggle-btn">[ІНСТРУКЦІЯ ТА СТАТУС СИСТЕМИ]</summary>
-            <div class="welcome-info-content">
-                <p>[СТАТУС]: Очікування авторизації користувача...</p>
-                <p>[ПРАВИЛА]: Система загадує слово на основі мови та рівня складності. Кожна вгадана літера додає +25
-                    очок. Користувач має право купити закриту літеру за 50 очок.</p>
-                <p>[ПОПЕРЕДЖЕННЯ]: Доступ обмежено протоколом безпеки.</p>
+            <h1 class="blink-title">> СИСТЕМА «ВГАДАЙ СЛОВО» </h1>
+
+            <details class="welcome-info-details" open>
+                <summary class="details-toggle-btn">[ІНСТРУКЦІЯ ТА СТАТУС СИСТЕМИ]</summary>
+                <div class="welcome-info-content">
+                    <p>[СТАТУС]: Очікування авторизації користувача...</p>
+                    <p>[ПРАВИЛА]: Система загадує слово на основі мови та рівня складності. Кожна вгадана літера додає
+                        +25 очок. Користувач має право купити закриту літеру за 50 очок.</p>
+                    <p>[ПОПЕРЕДЖЕННЯ]: Доступ обмежено протоколом безпеки.</p>
+                </div>
+            </details>
+
+            <div class="settings-panel">
+                <div class="setting-block">
+                    <label>Мова / Язык / Language:</label>
+                    <select id="language-select">
+                        <option value="ua">Українська</option>
+                        <option value="ru">Русский</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+
+                <div class="setting-block">
+                    <label>Складність (Літер):</label>
+                    <select id="difficulty-select">
+                        <option value="5">1 Рівень (5 літер)</option>
+                        <option value="7">2 Рівень (7 літер)</option>
+                        <option value="10">3 Рівень (10 літер)</option>
+                    </select>
+                </div>
             </div>
-        </details>
 
-        <button class="start-system-btn" id="enter-btn" style="margin-top: 20px;">
-            [ ЗАПУСТИТИ СИСТЕМУ ]
-        </button>
+            <button class="start-system-btn" id="enter-btn" style="margin-top: 20px;">
+                [ ЗАПУСТИТИ СИСТЕМУ ]
+            </button>
+        </div>
+
+        <div id="game-screen" class="screen hidden">
+            <h1> Pancier: Вгадай Слово</h1>
+
+            <div class="stats-panel">
+                <div class="stat-box">Очки: <span id="score-view">0</span></div>
+                <div class="stat-box">Спроби: <span id="lives-view">3</span>/3</div>
+                <button id="buy-letter-btn" disabled>Купити літеру (50 очок)</button>
+                <button id="exit-game-btn">Закінчити гру</button>
+            </div>
+
+            <hr>
+
+            <div id="question-container">
+                [ОЧІКУВАННЯ ЗАПУСКУ СИСТЕМИ...]
+            </div>
+
+            <div class="word-display" id="word-container"></div>
+            <div class="keyboard" id="keyboard-container"></div>
+        </div>
+
+        <div id="gameover-screen" class="screen hidden">
+            <h1 id="gameover-title" class="success-title">СИСТЕМУ УСПІШНО ЗЛАМАНО</h1>
+
+            <div class="index-info">
+                <p id="gameover-result">[РЕЗУЛЬТАТ]: Тестування завершено з максимальним результатом.</p>
+                <p class="final-score-text">[НАБРАНО ОЧКІВ]: <span id="final-score">0</span></p>
+            </div>
+
+            <button class="start-system-btn" id="restart-btn" style="margin-top: 20px;">
+                [ ПЕРЕЗАПУСТИТИ СИСТЕМУ ]
+            </button>
+        </div>
+
     </div>
 
-    <script>
-        document.getElementById('enter-btn').addEventListener('click', function () {
-            localStorage.removeItem('gameScore');
-            window.location.href = 'frame.html';
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
