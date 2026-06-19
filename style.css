@@ -1,11 +1,8 @@
-/* ==========================================================================
-   1. БАЗОВИЙ ХАКЕРСЬКИЙ СТИЛЬ СТОРІНКИ ТА КІНЕСКОПА
-   ========================================================================== */
+
 body {
     font-family: 'Courier New', Courier, monospace;
     background-color: #050a05;
     color: #33ff33;
-    /* Справжній хакерський зелений */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,19 +10,15 @@ body {
     margin: 0;
 }
 
+
 .game-container {
     background: #0a110a;
     padding: 35px;
     border-radius: 30px;
-    /* Круглий, як старі кінескопи */
     border: 12px solid #1a261a;
-    /* Товстий пластиковий корпус монітора */
-
-    /* Світіння екрана + тінь корпусу */
     box-shadow:
         0 20px 50px rgba(0, 0, 0, 0.9),
         inset 0 0 30px rgba(51, 255, 51, 0.2);
-
     max-width: 600px;
     width: 100%;
     text-align: center;
@@ -33,7 +26,7 @@ body {
     overflow: hidden;
 }
 
-/* Ефект горизонтальних ліній сканування (як на старому ТБ) */
+
 .game-container::before {
     content: " ";
     display: block;
@@ -49,6 +42,10 @@ body {
     pointer-events: none;
 }
 
+.hidden {
+    display: none !important;
+}
+
 hr {
     border: 0;
     height: 1px;
@@ -56,9 +53,7 @@ hr {
     margin: 20px 0;
 }
 
-/* ==========================================================================
-   2. СТИЛІ ДЛЯ ГОЛОВНОГО МЕНЮ (WELCOME.HTML) ТА ІНСТРУКЦІЇ
-   ========================================================================== */
+/* СТАРТОВИЙ ЕКРАН ТА ЛОГОТИП */
 .terminal-logo {
     font-size: 14px;
     line-height: 1.2;
@@ -87,7 +82,7 @@ hr {
     }
 }
 
-/* Блок інструкції (details) */
+/* БЛОК ІНСТРУКЦІЇ ТА СТАТУСУ */
 .welcome-info-details {
     text-align: left;
     background: rgba(51, 255, 51, 0.05);
@@ -97,7 +92,6 @@ hr {
     line-height: 1.5;
 }
 
-/* Кнопка-заголовок для розгортання інструкції */
 .details-toggle-btn {
     padding: 12px 15px;
     cursor: pointer;
@@ -106,45 +100,94 @@ hr {
     text-shadow: 0 0 5px #33ff33;
     background: rgba(51, 255, 51, 0.1);
     outline: none;
-    list-style: none;
     display: flex;
     align-items: center;
     user-select: none;
 }
 
-.details-toggle-btn::-webkit-details-marker {
-    display: none;
-}
-
-/* Наша кастомна стрілочка терміналу */
 .details-toggle-btn::before {
     content: "► ";
     margin-right: 10px;
     display: inline-block;
     transition: transform 0.2s ease;
-    color: #33ff33;
-    text-shadow: 0 0 5px #33ff33;
 }
 
-/* Поворот стрілочки при відкритті */
 .welcome-info-details[open] .details-toggle-btn::before {
     transform: rotate(90deg);
 }
 
-/* Вміст відкритого блоку інструкції */
 .welcome-info-content {
     padding: 15px;
     border-top: 1px dashed rgba(51, 255, 51, 0.4);
 }
 
-.welcome-info-content p {
-    margin: 8px 0;
+/* НАЛАШТУВАННЯ СЕЛЕКТОРІВ */
+.settings-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
-/* Велика кнопка запуску в меню */
+.setting-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+select {
+    background-color: #050a05;
+    color: #33ff33;
+    border: 2px solid #33ff33;
+    padding: 8px 12px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    outline: none;
+    text-shadow: 0 0 5px rgba(51, 255, 51, 0.5);
+}
+
+/* СИСТЕМНІ КНОПКИ УПРАВЛІННЯ */
+button {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    background-color: #0d220d;
+    color: #33ff33;
+    border: 3px solid #1a3c1a;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    box-shadow: 0 4px 0 #081308, 0 4px 10px rgba(0, 0, 0, 0.7), inset 0 0 10px rgba(51, 255, 51, 0.2);
+    text-shadow: 0 0 6px #33ff33;
+    transition: all 0.1s ease;
+}
+
+button:hover:not(:disabled) {
+    background-color: #143514;
+    border-color: #33ff33;
+    box-shadow: 0 4px 0 #0d220d, 0 0 15px rgba(51, 255, 51, 0.4), inset 0 0 10px rgba(51, 255, 51, 0.3);
+}
+
+button:active:not(:disabled) {
+    top: 4px;
+    box-shadow: 0 0 0 #000, inset 0 0 15px rgba(51, 255, 51, 0.5);
+}
+
+button:disabled {
+    background-color: #050a05;
+    color: #1a3c1a;
+    border-color: #081308;
+    box-shadow: none;
+    text-shadow: none;
+    cursor: not-allowed;
+}
+
 .start-system-btn {
-    font-size: 20px !important;
-    padding: 15px 30px !important;
+    font-size: 20px;
+    padding: 15px 30px;
     animation: pulse-glow 2s infinite;
     margin: 15px 0;
 }
@@ -163,104 +206,19 @@ hr {
     }
 }
 
-/* ==========================================================================
-   3. МЕХАНІЧНІ ОБ'ЄМНІ КНОПКИ ТА СЕЛЕКТОРИ
-   ========================================================================== */
-select {
-    background-color: #050a05;
-    color: #33ff33;
-    border: 2px solid #33ff33;
-    padding: 8px 12px;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    outline: none;
-    text-shadow: 0 0 5px rgba(51, 255, 51, 0.5);
-    box-shadow: inset 0 0 5px rgba(51, 255, 51, 0.3);
-}
-
-button {
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 10px 20px;
-    background-color: #0d220d;
-    color: #33ff33;
-    border: 3px solid #1a3c1a;
-    border-radius: 4px;
-    cursor: pointer;
-    position: relative;
-    outline: none;
-
-    /* Важка пластикова 3D-тінь кнопки */
-    box-shadow:
-        0 4px 0 #081308,
-        0 4px 10px rgba(0, 0, 0, 0.7),
-        inset 0 0 10px rgba(51, 255, 51, 0.2);
-
-    text-shadow: 0 0 6px #33ff33;
-    transition: all 0.1s ease;
-}
-
-button:hover:not(:disabled) {
-    background-color: #143514;
-    border-color: #33ff33;
-    box-shadow:
-        0 4px 0 #0d220d,
-        0 0 15px rgba(51, 255, 51, 0.4),
-        inset 0 0 10px rgba(51, 255, 51, 0.3);
-}
-
-button:active:not(:disabled) {
-    top: 4px;
-    /* Кнопка вдавлюється на глибину тіні */
-    box-shadow: 0 0 0 #000, inset 0 0 15px rgba(51, 255, 51, 0.5);
-}
-
-button:disabled {
-    background-color: #050a05;
-    color: #1a3c1a;
-    border-color: #081308;
-    box-shadow: none;
-    text-shadow: none;
-    cursor: not-allowed;
-}
-
-/* ==========================================================================
-   4. ІГРОВИЙ ІНТЕРФЕЙС (ПАНЕЛІ, СЛОВО, КЛАВІАТУРА)
-   ========================================================================== */
-h1 {
-    margin-top: 0;
-    color: #33ff33;
-    text-shadow: 0 0 10px #33ff33;
-}
-
-.settings-panel {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.setting-block {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: bold;
-    color: #33ff33;
-    text-shadow: 0 0 5px rgba(51, 255, 51, 0.5);
-}
-
+/* ІГРОВИЙ ЕКРАН ТА СТАТИСТИКА */
 .stats-panel {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 20px 0;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .stat-box {
     font-size: 20px;
     font-weight: bold;
-    color: #33ff33;
     text-shadow: 0 0 8px #33ff33;
 }
 
@@ -271,6 +229,13 @@ h1 {
     border: 1px dashed #33ff33;
 }
 
+#question-container {
+    margin: 15px 0;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+/* ВІДОБРАЖЕННЯ ЗАГАДАНОГО СЛОВА */
 .word-display {
     display: flex;
     justify-content: center;
@@ -279,7 +244,6 @@ h1 {
     flex-wrap: wrap;
 }
 
-/* Люмінесцентні рамки для букв слова */
 .letter-box {
     width: 45px;
     height: 45px;
@@ -292,55 +256,59 @@ h1 {
     justify-content: center;
     align-items: center;
     background-color: #050a05;
-    color: #33ff33;
     box-shadow: 0 0 10px rgba(51, 255, 51, 0.3), inset 0 0 8px rgba(51, 255, 51, 0.2);
     text-shadow: 0 0 8px #33ff33;
 }
+
 
 .keyboard {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 8px;
-    margin-top: 20px;
+    gap: 12px;
+    margin-top: 25px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
 }
 
-/* Кнопки літер віртуальної клавіатури */
 .key-btn {
-    padding: 10px 12px;
-    background-color: #0d220d;
-    color: #33ff33;
-    border: 2px solid #1a3c1a;
-    border-radius: 4px;
+    padding: 12px 16px;
+    background-color: #081308;
+    color: #22aa22;
+    border: 1px solid #143514;
+    border-radius: 6px;
     cursor: pointer;
     font-weight: bold;
-    box-shadow: 0 3px 0 #050a05, 0 3px 5px rgba(0, 0, 0, 0.5);
-    text-shadow: 0 0 4px rgba(51, 255, 51, 0.6);
-    transition: all 0.05s ease;
+    font-size: 16px;
+    box-shadow: 0 3px 0 #030703;
+    transition: all 0.2s ease;
+    text-shadow: none;
 }
 
 .key-btn:hover:not(:disabled) {
-    background-color: #143514;
+    background-color: #102e10;
+    color: #33ff33;
     border-color: #33ff33;
-    box-shadow: 0 3px 0 #0d220d, 0 0 8px rgba(51, 255, 51, 0.5);
+    box-shadow: 0 3px 0 #081308, 0 0 12px rgba(51, 255, 51, 0.4);
 }
 
 .key-btn:active:not(:disabled) {
     transform: translateY(3px);
-    box-shadow: 0 0 0 #000;
+    box-shadow: none;
 }
 
 .key-btn:disabled {
-    background-color: #030603;
-    color: #1a3c1a;
-    border-color: #081308;
+    background-color: #030503;
+    color: #132a13;
+    border-color: #050a05;
     transform: translateY(3px);
-    /* Залишається механічно втиснутою */
     box-shadow: none;
     text-shadow: none;
     cursor: not-allowed;
 }
-/* Стилі для сторінки завершення гри */
+
+/* ФІНАЛЬНИЙ ЕКРАН */
 .success-title {
     color: #33ff33;
     text-shadow: 0 0 15px #33ff33, 0 0 25px rgba(51, 255, 51, 0.5);
@@ -348,11 +316,13 @@ h1 {
     margin-bottom: 25px;
 }
 
+.index-info {
+    margin: 20px 0;
+}
+
 .final-score-text {
     font-size: 18px;
     font-weight: bold;
-    color: #33ff33;
-    text-shadow: 0 0 8px #33ff33;
     border-top: 1px dashed rgba(51, 255, 51, 0.3);
     padding-top: 10px;
     margin-top: 15px;
