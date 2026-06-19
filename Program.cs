@@ -7,6 +7,7 @@ using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
 
+
 class Program
 {
     private static string BotToken = "8550758942:AAFPS9KoEJ42_7QJKIEQqevZz176vHaydu8";
@@ -53,7 +54,7 @@ class Program
                 {
                     InlineKeyboardButton.WithUrl(
                         text: "Відкрити гру \"Вгадай Слово\"",
-                        url: ""
+                        url: "https://ryeskevych-blip.github.io/guesstheword2/"
                     )
                 }
             });
@@ -67,6 +68,7 @@ class Program
             );
         }
     }
+
 
     static Task HandlePollingErrorAsync(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)
     {
