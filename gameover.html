@@ -4,29 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Систему Зламано</title>
+    <title>Кінець гри</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="game-container">
-        <h1 class="success-title"> СИСТЕМУ УСПІШНО ЗЛАМАНО</h1>
+        <h1 class="success-title"> КІНЕЦЬ ГРИ</h1>
 
-        <div class="welcome-info">
+        <div class="index-info">
             <p>[РЕЗУЛЬТАТ]: Тестування завершено з максимальним результатом.</p>
-            <p class="final-score-text">[НАБРАНО ОЧКІВ CPU]: <span id="final-score">0</span></p>
+            <p class="final-score-text">[НАБРАНО ОЧКІВ]: <span id="final-score">0</span></p>
         </div>
 
         <button class="start-system-btn"
-            onclick="localStorage.removeItem('gameScore'); window.location.href='welcome.html'">
+            onclick="localStorage.removeItem('gameScore'); window.location.href='index.html'">
             [ ПЕРЕЗАПУСТИТИ СИСТЕМУ ]
         </button>
-    </div>
 
-    <script>
-        const savedScore = localStorage.getItem('gameScore') || 0;
-        document.getElementById('final-score').innerText = savedScore;
-    </script>
+        <script>
+            const savedScore = localStorage.getItem('gameScore') || 0;
+            document.getElementById('final-score').innerText = savedScore;
+        </script>
 </body>
 
 </html>
