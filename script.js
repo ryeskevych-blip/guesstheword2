@@ -12,9 +12,15 @@ const themedDictionaries = {
                 { word: "браузер", hint: "Програма для перегляду вебсторінок та навігації в мережі Інтернет." }
             ],
             10: [
-                { word: "комп'ютер", hint: "Електронна обчислювальна машина для обробки та зберігання даних." },
-                { word: "програміст", hint: "Специаліст, який займається написанням коду та створенням софту." },
-                { word: "алгоритм", hint: "Чітка послідовність дій або команд, що веде до вирішення поставленої задачі." }
+                { word: "алгоритм", hint: "Чітка послідовність дій або команд, що веде до вирішення поставленої задачі." },
+                { word: "програміст", hint: "Фахівець, який займається створенням та налагодженням коду для програмного забезпечення." },
+                { word: "інтерфейс", hint: "Сукупність засобів і правил взаємодії між користувачем і комп'ютерною системою." },
+                { word: "інформація", hint: "Будь-які дані, відомості чи знання, що передаються, обробляються або зберігаються в ПК." },
+                { word: "технологія", hint: "Сукупність методів і процесів, які використовуються у сфері розробки та виробництва." },
+                { word: "абстракція", hint: "Один із принципів ООП, що дозволяє виділити головні характеристики об'єкта без деталей." },
+                { word: "компілятор", hint: "Програма, яка перекладає весь вихідний код високого рівня в машинний код." },
+                { word: "базаданих", hint: "Впорядкована сукупність структурованих даних, які зберігаються в комп'ютерній системі." },
+                { word: "архітектура", hint: "Загальна структура, компоненти та взаємозв'язки всередині програмної системи." }
             ]
         },
         ru: {
@@ -29,9 +35,15 @@ const themedDictionaries = {
                 { word: "браузер", hint: "Программа для просмотра веб-страниц и навигации в сети Интернет." }
             ],
             10: [
-                { word: "компьютер", hint: "Электронная вычислительная машина для обработки и хранения данных." },
-                { word: "программист", hint: "Специалист, который занимается написанием кода и созданием софта." },
-                { word: "алгоритм", hint: "Четкая последовательность действий или команд, ведущая к решению задачи." }
+                { word: "алгоритм", hint: "Четкая последовательность действий или команд, ведущая к решению задачи." },
+                { word: "программист", hint: "Специалист, который занимается написанием и отладкой кода программного обеспечения." },
+                { word: "интерфейс", hint: "Совокупность средств и правил взаимодействия между пользователем и системой." },
+                { word: "информация", hint: "Любые данные, сведения или знания, которые передаются, обрабатываются или хранятся в ПК." },
+                { word: "технология", hint: "Совокупность методов и процессов, используемых в сфере разработки и производства." },
+                { word: "абстракция", hint: "Один из принципов ООП, позволяющий выделить важные свойства объекта без деталей." },
+                { word: "компилятор", hint: "Программа, переводящая исходный код высокого уровня в машинные команды." },
+                { word: "базаданных", hint: "Упорядоченная совокупность структурированных данных, хранящихся в компьютерной системе." },
+                { word: "архитектура", hint: "Общая структура, компоненты и взаимосвязи внутри программной системы." }
             ]
         },
         en: {
@@ -46,115 +58,15 @@ const themedDictionaries = {
                 { word: "browser", hint: "A program for viewing web pages and navigating the Internet." }
             ],
             10: [
-                { word: "computer", hint: "An electronic computing machine for data processing and storage." },
-                { word: "programmer", hint: "A specialist who writes code and creates software." },
-                { word: "algorithm", hint: "A clear sequence of actions or commands leading to the solution of a task." }
-            ]
-        }
-    },
-    nature: {
-        ua: {
-            5: [
-                { word: "океан", hint: "Величезний простір солоної води, що омиває материки." },
-                { word: "трава", hint: "Зелене рослинне покриття землі з тонкими стеблами." },
-                { word: "птиця", hint: "Тварина з пір'ям і крилами, більшість з яких вміють літати." }
-            ],
-            7: [
-                { word: "ведмідь", hint: "Великий хижий лісовий звір із густою бурою або чорною шерстю." },
-                { word: "планета", hint: "Велике небесне тіло, що обертається навколо зірки (наприклад, Земля)." },
-                { word: "пустеля", hint: "Велика посушлива територія з піском та майже без рослинності." }
-            ],
-            10: [
-                { word: "заповідник", hint: "Територія, де охороняються рідкісні види тварин та рослин." },
-                { word: "блискавка", hint: "Гігантський електричний розряд у повітрі під час грози." },
-                { word: "водоспад", hint: "Потік води, що стрімко падає з великої висоти в річці." }
-            ]
-        },
-        ru: {
-            5: [
-                { word: "океан", hint: "Огромное пространство соленой воды, омывающее материки." },
-                { word: "трава", hint: "Зеленый растительный покров земли с тонкими стеблями." },
-                { word: "птица", hint: "Животное с перьями и крыльями, большинство из которых умеют летать." }
-            ],
-            7: [
-                { word: "медведь", hint: "Крупный хищный лесной зверь с густой бурой или черной шерстью." },
-                { word: "планета", hint: "Крупное небесное тело, вращающееся вокруг звезды (например, Земля)." },
-                { word: "пустыня", hint: "Большая засушливая территория с песком и почти без растительности." }
-            ],
-            10: [
-                { word: "заповедник", hint: "Территория, где охраняются редкие виды животных и растений." },
-                { word: "молния", hint: "Гигантский электрический разряд в воздухе во время грозы." },
-                { word: "водопад", hint: "Поток воды, стремительно падающий с большой высоты в реке." }
-            ]
-        },
-        en: {
-            5: [
-                { word: "ocean", hint: "A huge expanse of salt water that washes over continents." },
-                { word: "grass", hint: "Green plant covering of the earth with thin stems." },
-                { word: "bird", hint: "An animal with feathers and wings, most of which can fly." }
-            ],
-            7: [
-                { word: "bear", hint: "A large predatory forest animal with thick brown or black fur." },
-                { word: "planet", hint: "A large celestial body rotating around a star (e.g., Earth)." },
-                { word: "desert", hint: "A large arid area with sand and almost no vegetation." }
-            ],
-            10: [
-                { word: "reserve", hint: "An area where rare species of animals and plants are protected." },
-                { word: "lightning", hint: "A giant electrical discharge in the air during a thunderstorm." },
-                { word: "waterfall", hint: "A stream of water falling steeply from a high place in a river." }
-            ]
-        }
-    },
-    general: {
-        ua: {
-            5: [
-                { word: "потяг", hint: "Транспортний засіб, що рухається по рейках і перевозить пасажирів." },
-                { word: "книга", hint: "Друковане видання у вигляді зшитих разом аркушів із текстом." },
-                { word: "школа", hint: "Навчальний заклад, де діти здобувають середню освіту." }
-            ],
-            7: [
-                { word: "будинок", hint: "Будівля, призначена для житла або розміщення різних установ." },
-                { word: "клавіша", hint: "Окрема кнопка на клавіатурі або музичному інструменті." },
-                { word: "картина", hint: "Твір живопису, намальований фарбами на полотні чи папері." }
-            ],
-            10: [
-                { word: "університет", hint: "Вищий навчальний заклад, де готують спеціалістів різних наук." },
-                { word: "технологія", hint: "Сукупність методів та інструментів для досягнення практичної мети." },
-                { word: "історія", hint: "Наука, що вивчає минуле людства за збереженими джерелами." }
-            ]
-        },
-        ru: {
-            5: [
-                { word: "поезд", hint: "Транспортное средство, которое движется по рельсам и перевозит пассажиров." },
-                { word: "книга", hint: "Печатное издание в виде сшитых вместе листов с текстом." },
-                { word: "школа", hint: "Учебное заведение, где дети получают среднее образование." }
-            ],
-            7: [
-                { word: "здание", hint: "Строение, предназначенное для жилья или размещения различных учреждений." },
-                { word: "клавиша", hint: "Отдельная кнопка на клавиатуре или музыкальном инструменте." },
-                { word: "картина", hint: "Произведение живописи, нарисованное красками на холсте или бумаге." }
-            ],
-            10: [
-                { word: "университет", hint: "Высшее учебное заведение, где готовят специалистов различных наук." },
-                { word: "технология", hint: "Совокупность методов и инструментов для достижения практической цели." },
-                { word: "история", hint: "Наука, изучающая прошлое человечества по сохранившимся источникам." }
-            ]
-        },
-        en: {
-            5: [
-                { word: "train", hint: "A vehicle that moves on rails and transports passengers." },
-                { word: "book", hint: "A printed publication of sheets bound together with text." },
-                { word: "school", hint: "An educational institution where children receive secondary education." }
-            ],
-            7: [
-                { word: "building", hint: "A structure designed for housing or accommodating various institutions." },
-                { word: "button", hint: "A separate key on a keyboard or a musical instrument." },
-                { word: "picture", hint: "A work of art painted with paints on canvas or paper." }
-            ],
-            10: [
-                { word: "university", hint: "A higher educational institution where specialists in various sciences are trained." },
-                { word: "technology", hint: "A set of methods and tools to achieve a set practical goal." },
-                { word: "history", hint: "A science that studies the past of mankind through preserved sources." }
+                { word: "algorithm", hint: "A clear sequence of actions or commands leading to the solution of a task." },
+                { word: "programmer", hint: "A specialist who writes, develops, and debugs computer software code." },
+                { word: "technology", hint: "A collection of techniques, skills, methods, and processes used in production." },
+                { word: "encryption", hint: "The process of converting information or data into a secret code to prevent unauthorized access." },
+                { word: "connection", hint: "A link or channel between two or more computing devices for data exchange." },
+                { word: "repository", hint: "A central location where data or software development code is stored and managed." },
+                { word: "javascript", hint: "A popular programming language primarily used to create interactive web pages." },
+                { word: "controller", hint: "A component or device that manages and directs the flow of data between systems." },
+                { word: "deployment", hint: "The process of distributing and installing a software application into environment." }
             ]
         }
     }
@@ -169,41 +81,67 @@ const alphabets = {
 let currentWord = "";
 let guessedLetters = [];
 let score = 0;
+let lives = 3; 
 let wordLength = 5;
 let currentLang = "ua";
-let currentWordIndex = 0;
-let chosenTheme = "it"; 
+let chosenTheme = "it";
 
-const startBtn = document.getElementById("start-game-btn");
+// Екрани
+const welcomeScreen = document.getElementById("welcome-screen");
+const gameScreen = document.getElementById("game-screen");
+const gameoverScreen = document.getElementById("gameover-screen");
+
+// Елементи управління
+const enterBtn = document.getElementById("enter-btn");
+const restartBtn = document.getElementById("restart-btn");
+const exitGameBtn = document.getElementById("exit-game-btn");
 const buyLetterBtn = document.getElementById("buy-letter-btn");
+
+// Текстові поля
 const scoreView = document.getElementById("score-view");
+const livesView = document.getElementById("lives-view");
+const finalScore = document.getElementById("final-score");
+const gameoverTitle = document.getElementById("gameover-title");
+const gameoverResult = document.getElementById("gameover-result");
+
 const wordContainer = document.getElementById("word-container");
 const keyboardContainer = document.getElementById("keyboard-container");
 const questionContainer = document.getElementById("question-container");
 const langSelect = document.getElementById("language-select");
 const diffSelect = document.getElementById("difficulty-select");
 
+function showScreen(screenToShow) {
+    welcomeScreen.classList.add("hidden");
+    gameScreen.classList.add("hidden");
+    gameoverScreen.classList.add("hidden");
+    screenToShow.classList.remove("hidden");
+}
+
 function initRound() {
-    chosenTheme = localStorage.getItem('gameTheme') || 'it';
-    
     currentLang = langSelect.value;
     wordLength = parseInt(diffSelect.value);
     
     const wordsList = themedDictionaries[chosenTheme][currentLang][wordLength];
-    currentWordIndex = Math.floor(Math.random() * wordsList.length);
-    const randomPair = wordsList[currentWordIndex];
+    const randomPair = wordsList[Math.floor(Math.random() * wordsList.length)];
     
     currentWord = randomPair.word.toUpperCase();
-    questionContainer.innerText = `[ПИТАННЯ / ВОПРОС / QUESTION]: ${randomPair.hint}`;
+    questionContainer.innerText = `[ПИТАННЯ]: ${randomPair.hint}`;
     
     guessedLetters = Array(currentWord.length).fill(false);
+    
+    lives = 3;
+    if (livesView) livesView.innerText = lives;
     
     renderWord();
     renderKeyboard();
     updateScoreView();
 }
 
-startBtn.addEventListener("click", initRound);
+enterBtn.addEventListener("click", () => {
+    score = 0;
+    initRound();
+    showScreen(gameScreen);
+});
 
 function renderWord() {
     wordContainer.innerHTML = "";
@@ -247,10 +185,24 @@ function handleLetterGuess(letter) {
             score += 25;
         }
     }
+    
     if (found) {
         renderWord();
         updateScoreView();
         checkWin();
+    } else {
+        lives--;
+        if (livesView) livesView.innerText = lives;
+        
+        if (lives <= 0) {
+            setTimeout(() => {
+                if (gameoverTitle) gameoverTitle.innerText = "ДОСТУП ЗАБЛОКОВАНО";
+                if (gameoverResult) gameoverResult.innerText = "[ПОМИЛКА]: Ви програли. Спроби вичерпано, систему захищено.";
+                
+                finalScore.innerText = score;
+                showScreen(gameoverScreen);
+            }, 300);
+        }
     }
 }
 
@@ -290,32 +242,43 @@ function checkWin() {
                 diffSelect.value = "10"; 
                 initRound();             
             } else {
-                localStorage.setItem('gameScore', score);
-                window.location.href = 'gameover.html';
+                if (gameoverTitle) gameoverTitle.innerText = "СИСТЕМУ УСПІШНО ЗЛАМАНО";
+                if (gameoverResult) gameoverResult.innerText = "[УСПІХ]: Вітаємо! Ви пройшли гру та завершили тестування з максимальним результатом.";
+                
+                finalScore.innerText = score;
+                showScreen(gameoverScreen);
             }
         }, 300);
     }
 }
+
+exitGameBtn.addEventListener("click", () => {
+    score = 0;
+    diffSelect.value = "5";
+    showScreen(welcomeScreen);
+});
+
+restartBtn.addEventListener("click", () => {
+    diffSelect.value = "5";
+    showScreen(welcomeScreen);
+});
 
 function getTranslation(key) {
     const translations = {
         ua: {
             winLevel1: "Правильно! Ви відгадали слово:",
             winLevel2: "Чудово! Слово розгадано:",
-            nextLevel: "Ви перейшли на наступний рівень",
-            winGame: "Вітаємо! Ви повністю пройшли систему!"
+            nextLevel: "Ви перейшли на наступний рівень"
         },
         ru: {
             winLevel1: "Правильно! Вы отгадали слово:",
             winLevel2: "Отлично! Слово разгадано:",
-            nextLevel: "Вы перешли на следующий уровень",
-            winGame: "Поздравляем! Вы полностью прошли систему!"
+            nextLevel: "Вы перешли на следующий уровень"
         },
         en: {
             winLevel1: "Correct! You guessed the word:",
             winLevel2: "Great! The word is solved:",
-            nextLevel: "You have moved to the next level",
-            winGame: "Congratulations! You have completely passed the system!"
+            nextLevel: "You have moved to the next level"
         }
     };
     return translations[currentLang][key];
